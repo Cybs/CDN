@@ -26,9 +26,11 @@ var body = $response && $response.body;
 var url = ($request && $request.url) || "?";
 
 if (!body || typeof body !== "string") {
+  $notification.post("小火箭脚本测试", "", "已运行 · build 1");
   console.log("[g1] 无 body " + url);
   $done({});
 } else {
+  $notification.post("小火箭脚本测试", "", "已运行 · build 2");
   console.log("[g1] 命中 " + url + "  body=" + body.length + "B");
 
   var summary = ["URL: " + url, "BODY: " + body.length + "B"];
